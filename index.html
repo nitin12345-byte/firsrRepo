@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Survey index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="icon.png"   type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cinzel+Decorative:wght@700&family=Trocchi&display=swap" rel="stylesheet">
+  <style>
+  *{
+   margin:0px;
+   padding:0px;
+   box-sizing:border-box;
+  }
+  
+   .header{
+       font-family:Trocchi;
+       margin-top:5px;
+   }
+   
+    .logo{
+      font:20px Trocchi;
+      letter-spacing:2px;
+      color:#30949d;     
+    }
+   
+     .mid{
+      position:relative;
+      height:540px; 
+      width:100%;
+     }
+     
+   .top{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background:rgba(0,0,0,0.3);
+   }
+   
+   .down{
+     position:absolute;
+     height:100%;
+     width:100%;
+   }
+   
+   .bg-teal{
+     background:#30949d;
+     color:white;
+   }
+   .logo:hover{
+      text-decoration: none;  
+     }
+   
+   @media only screen and (min-width:720px){
+   
+     .btn-container{
+          width:25% !important;
+     }
+ } 
+
+ 
+  </style>
+ </head>
+<body>
+    <nav class="navbar p-2 p-md-3  shadow">
+       <a class="logo" href="index.html">SURVEY.COM</a>
+    </nav>
+<br>
+   <div class="mid mt-3">
+        <div  class="down">
+           <img src="frontImage.jpg" class="img-fluid" style="width:100%;height:100%" />
+        </div>
+        <div class="top d-flex justify-content-center">
+           <div class="align-self-center btn-container  w-75 text-center">
+               <h2 class="text-white header mb-5">Get your answers from survey</h2> 
+               <a class="btn btn-block bg-info mb-1 text-white" href="login.html">Login</a>
+                <a class="btn btn-block bg-info text-white"  href="signin.html">Signin</a>
+           </div>
+        </div>
+  </div>
+<br><br>
+ <div class="container mt-4 mt-md-5 mb-4">
+     <h4 class="header text-center mb-4 border border-success p-2 border-right-0 border-left-0">Advantages of using this web application</h4>
+     <br><br>
+     <div class="row mt-4">
+        <div class="col-md-3 col-sm-6 p-2 text-center">
+            <div class="rounded-lg shadow p-3">
+               <img src="https://img.icons8.com/fluent/48/000000/download-2.png"/><br>
+               <h5 class="header mb-4">Downlodable CSV file<h5>
+           </div>
+        </div>
+        <div class="col-md-3 col-sm-6 p-2 text-center">
+             <div class="rounded-lg shadow p-3">
+                  <img src="https://img.icons8.com/nolan/64/edit--v1.png"/><br>
+	<h5 class="header">Edit forms any time</h5>
+             </div>
+       </div>
+       <div class="col-md-3 col-sm-6 p-2 text-center">
+          <div class="rounded-lg shadow p-3">
+               <img src="https://img.icons8.com/nolan/64/monitor.png"/><br>
+                <h5 class="header">Easy to access</h5>
+           </div> 
+       </div>
+       <div class="col-md-3 col-sm-6 p-2 text-center">
+          <div class="rounded-lg shadow p-3">
+              <img src="https://img.icons8.com/cute-clipart/64/000000/security-configuration.png"/><br>
+               <h5 class="header">Secure</h5>
+          </div> 
+       </div>
+  </div>   
+ </div>
+ <br><br>
+    <div class="bg-dark footer p-3 mt-4 mt-md-5">
+       <a href="aboutus.html" class="text-white">About us</a> 
+    </div>
+</body>
+</html>

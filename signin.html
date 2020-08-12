@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Survey.com signin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="icon.png"   type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cinzel+Decorative:wght@700&family=Trocchi&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+  <style>
+ 
+      *{
+      margin:0px;
+      padding:0px;
+      box-sizing:border-box;
+    }
+    
+    .main{
+        width:90%;
+        border-top:6px solid #30949d;
+        margin:50px auto;   
+    }	
+	
+   .logo{
+    font:20px Trocchi;
+    letter-spacing:2px;
+    color:#30949d;     
+   }
+   
+   .text-teal{
+      color:#30949d;
+   }
+   
+    .bg-teal{
+       background:#30949d;
+    }	
+
+    .error{
+        display:none;
+    }
+    
+    
+                  .loader-wrapper{
+                  position:absolute;
+                  height:100%;
+                  width:100%;
+                  top:0;
+                  left:0;
+                  z-index : 1000;
+                  background:rgba(255,255,255,0.7);
+                  display:none;
+              }     
+              
+              .loader{
+                  height:50px;
+                  width:50px;
+                  border:5px solid white;
+                  border-top:5px solid teal;
+                  border-radius:50%;
+                  animation:spin 0.8s linear infinite;
+              }
+              
+              @keyframes spin{
+                  0%{
+                    transform : rotate(0deg);  
+                  }
+                  100%{
+                      transform : rotate(360deg);
+                  } 
+              }   
+           
+   .logo:hover{
+      text-decoration: none;  
+     }
+     
+    @media only screen and (min-width:720px){
+     .main{
+          width:50% !important;
+       }
+  }
+  
+  </style>
+ </head>
+<body>
+     <nav class="navbar p-2 p-md-3  shadow">
+       <a class="logo text-info" href="index.html">SURVEY.COM</a>
+     </nav>
+<br>
+<div class="main rounded-lg p-3 shadow">
+    <h4 class="text-center logo text-teal p-2 mb-4 mt-2">Signin Form</h4>
+    <form>
+        <p class="text-danger error"></p>
+        <div class="form-group">
+           <input type="text" class="form-control" name="name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+           <input type="email" class="form-control" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+           <input type="password" class="form-control" name="password" placeholder="Password" minlength="8" maxlength="12"  title="password should be minimum 8 digits and maximum 12" required >
+        </div>
+        <div class="form-group mt-4 mb-5">
+            <button type="button" class="btn btn-block bg-info text-white" onclick="signin()">Signin</button>
+        </div>
+    </form>
+ </div>
+<a href="home.jsp"></a>
+    <div class="loader-wrapper  justify-content-center">
+            <div class="align-self-center loader">
+             </div>
+        </div>
+    
+<script>
+    
+    function signin(){
+    
+        event.preventDefault();
+        var loader = document.querySelector(".loader-wrapper");
+        var email       =   document.getElementsByName("email")[0].value;
+        var password  =  document.getElementsByName("password")[0].value;
+        var error        =  document.getElementsByClassName("error")[0];
+        var  name      =  document.getElementsByName("name")[0].value;
+        
+        if (email!="" && password!="" && name!="")
+        {
+            loader.style.display = "flex";
+            var xhttp = new XMLHttpRequest();
+           xhttp.onreadystatechange = function() {
+           if  ( this.readyState === 4 && this.status === 200) {
+          
+           if (this.responseText == "success")
+                   document.links[1].click();
+           else{
+                error.style.display = "block";
+                error.innerHTML =  "<i class='fa fa-warning'></i>&nbsp; "+this.responseText;
+                loader.style.display = "none";
+            }
+        }
+   }
+      xhttp.open("POST", "SignIn", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("name="+name+ "&email="+email+"&password="+password);
+   }
+     error.style.display = "block";
+     error.innerHTML =  "<i class='fa fa-warning'></i> &nbsp; fill all the fields";        
+ }   
+</script>
+
+
+</body>
+</html> 
